@@ -1,24 +1,6 @@
 import { createApp } from 'vue';
-import { createRouter, createWebHashHistory } from 'vue-router';
 import App from './App.vue';
-import HomeView from "@/views/HomeView.vue";
-import LoginView from "@/views/LoginView.vue";
-
-const routes = [
-  {
-    path: "/home",
-    component: HomeView
-  },
-  {
-    path: "/login",
-    component: LoginView
-  }
-];
-
-const router = createRouter({
-  history: createWebHashHistory(),
-  routes
-});
+import router from "./router";
 
 const Vue = createApp(App);
 
