@@ -1,1 +1,4 @@
-<template><h3>Home</h3></template>
+<template>
+  <h3>Home</h3>
+  <routerLink to="/login">Navegar para Login</routerLink>
+</template>
