@@ -24,7 +24,7 @@ const routes = [
         component: VendasComponent,
         children: [
           {
-            path: "leads", component: LeadsComponent
+            path: "leads", component: LeadsComponent, name: "leads"
           },
           {
             path: "leads/:id", component: LeadComponent, name: "lead"
