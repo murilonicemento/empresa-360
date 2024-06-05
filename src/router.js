@@ -30,14 +30,14 @@ const routes = [
             path: "leads/:id", component: LeadComponent
           },
           {
-            path: "contratos", component: ContratosComponent
+            path: "contratos", component: ContratosComponent, name: "contratos"
           },
           {
             path: "", component: VendasPadrao
           }
         ]
       },
-      { path: "servicos", component: ServicosComponent },
+      { path: "servicos", component: ServicosComponent, name: "servicos" },
       { path: "dashboard", component: DashboardComponent },
     ]
   },
