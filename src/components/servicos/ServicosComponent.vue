@@ -7,7 +7,9 @@
         <div class="card mb-2" style="width: 11rem">
           <img :src="`/img/${d.icone}`" alt="" class="card-img-top" />
           <div class="card-body text-center">
-            <p class="card-text">{{ d.servico }}</p>
+            <routerLink :to="{ name: 'servico', params: { id: d.id } }">{{
+              d.servico
+            }}</routerLink>
           </div>
         </div>
       </div>
