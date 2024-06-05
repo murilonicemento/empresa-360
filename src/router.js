@@ -67,7 +67,17 @@ const routes = [
   {
     path: "/login",
     component: LoginView
-  }
+  },
+  { path: "/redirecionamento-1", redirect: '/home/servicos' },
+  { path: "/redirecionamento-2", redirect: { name: "leads" } },
+  { path: "/redirecionamento-3", redirect: "/home/vendas" },
+  {
+    path: "/redirecionamento-4", redirect: to => {
+      console.log(to);
+
+      return '/home/vendas';
+    }
+  },
 ];
 
 const router = createRouter({
