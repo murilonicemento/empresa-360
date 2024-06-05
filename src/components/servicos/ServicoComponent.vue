@@ -16,10 +16,19 @@ export default {
   created() {
     this.getDadosApi(`http://localhost:3000/servicos/${this.$route.params.id}`);
   },
-  watch: {
-    $route(to) {
+  beforeRouteUpdate(to, from, next) {
+    // to -> para onde estamos indo
+    // from -> de onde vimos
+    // next -> faz que o fluxo de navegação siga em frente
+
+    if (to.params.id != undefined)
       this.getDadosApi(`http://localhost:3000/servicos/${to.params.id}`);
-    },
+    next();
   },
+  // watch: {
+  //   $route(to) {
+  //     this.getDadosApi(`http://localhost:3000/servicos/${to.params.id}`);
+  //   },
+  // },
 };
 </script>
