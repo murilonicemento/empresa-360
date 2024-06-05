@@ -3,6 +3,7 @@ import HomeView from "@/views/HomeView.vue";
 import LoginView from "@/views/LoginView.vue";
 import SiteView from "@/views/SiteView.vue";
 import VendasComponent from "@/components/vendas/VendasComponent.vue";
+import VendasPadrao from "@/components/vendas/VendasPadrao.vue";
 import LeadsComponent from "@/components/vendas/LeadsComponent.vue";
 import LeadComponent from "@/components/vendas/LeadComponent.vue";
 import ContratosComponent from "@/components/vendas/ContratosComponent.vue";
@@ -30,6 +31,9 @@ const routes = [
           },
           {
             path: "contratos", component: ContratosComponent
+          },
+          {
+            path: "", component: VendasPadrao
           }
         ]
       },
