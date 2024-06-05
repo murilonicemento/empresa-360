@@ -21,6 +21,7 @@ const routes = [
   },
   {
     path: "/home",
+    alias: "/app",
     component: HomeView,
     children: [
       {
@@ -31,7 +32,7 @@ const routes = [
             path: "leads", component: LeadsComponent, name: "leads"
           },
           {
-            path: "leads/:id", component: LeadComponent, name: "lead"
+            path: "leads/:id", alias: ["/l/:id", "pessoa/:id", "/:id"], component: LeadComponent, name: "lead"
           },
           {
             path: "contratos", component: ContratosComponent, name: "contratos"
@@ -45,6 +46,7 @@ const routes = [
         path: "servicos", component: ServicosComponent, name: "servicos", children: [
           {
             path: ":id",
+            alias: "/s/:id",
             components: {
               default: ServicoComponent,
               opcoes: OpcoesComponent,
