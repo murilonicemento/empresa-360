@@ -8,6 +8,7 @@ import LeadsComponent from "@/components/vendas/LeadsComponent.vue";
 import LeadComponent from "@/components/vendas/LeadComponent.vue";
 import ContratosComponent from "@/components/vendas/ContratosComponent.vue";
 import ServicosComponent from "@/components/servicos/ServicosComponent.vue";
+import ServicoComponent from "@/components/servicos/ServicoComponent.vue";
 import DashboardComponent from "@/components/dashboard/DashboardComponent.vue";
 
 const routes = [
@@ -37,7 +38,11 @@ const routes = [
           }
         ]
       },
-      { path: "servicos", component: ServicosComponent, name: "servicos" },
+      {
+        path: "servicos", component: ServicosComponent, name: "servicos", children: [
+          { path: ":id", component: ServicoComponent, name: "servico" }
+        ]
+      },
       { path: "dashboard", component: DashboardComponent },
     ]
   },
