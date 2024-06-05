@@ -10,6 +10,7 @@ import ContratosComponent from "@/components/vendas/ContratosComponent.vue";
 import ServicosComponent from "@/components/servicos/ServicosComponent.vue";
 import ServicoComponent from "@/components/servicos/ServicoComponent.vue";
 import DashboardComponent from "@/components/dashboard/DashboardComponent.vue";
+import DashboardRodape from '@/components/dashboard/DashboardRodape.vue';
 import OpcoesComponent from './components/servicos/OpcoesComponent.vue';
 import IndicadoresComponent from './components/servicos/IndicadoresComponent.vue';
 
@@ -53,7 +54,12 @@ const routes = [
           }
         ]
       },
-      { path: "dashboard", component: DashboardComponent },
+      {
+        path: "dashboard", components: {
+          default: DashboardComponent,
+          rodape: DashboardRodape
+        }
+      },
     ]
   },
   {
