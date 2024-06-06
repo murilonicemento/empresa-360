@@ -13,6 +13,7 @@ import DashboardComponent from "@/components/dashboard/DashboardComponent.vue";
 import DashboardRodape from '@/components/dashboard/DashboardRodape.vue';
 import OpcoesComponent from './components/servicos/OpcoesComponent.vue';
 import IndicadoresComponent from './components/servicos/IndicadoresComponent.vue';
+import PaginaNaoEncontrada from './views/PaginaNaoEncontrada.vue';
 
 const routes = [
   {
@@ -78,6 +79,7 @@ const routes = [
       return '/home/vendas';
     }
   },
+  { path: "/:catchAll(.*)*", component: PaginaNaoEncontrada },
 ];
 
 const router = createRouter({
