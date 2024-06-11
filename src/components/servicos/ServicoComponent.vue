@@ -12,9 +12,10 @@ import ApiMixin from "@/mixins/ApiMixin";
 
 export default {
   name: "ServicoComponent",
+  props: ["id"],
   mixins: [ApiMixin],
   created() {
-    this.getDadosApi(`http://localhost:3000/servicos/${this.$route.params.id}`);
+    this.getDadosApi(`http://localhost:3000/servicos/${this.id}`);
   },
   beforeRouteUpdate(to, from, next) {
     // to -> para onde estamos indo

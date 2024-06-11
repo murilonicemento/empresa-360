@@ -47,6 +47,11 @@ const routes = [
         path: "servicos", component: ServicosComponent, name: "servicos", children: [
           {
             path: ":id",
+            props: {
+              default: true,
+              indicadores: false,
+              opcoes: true,
+            },
             alias: "/s/:id",
             components: {
               default: ServicoComponent,
