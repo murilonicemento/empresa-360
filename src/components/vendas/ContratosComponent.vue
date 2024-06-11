@@ -74,24 +74,17 @@ export default {
   }),
   methods: {
     pesquisar() {
-      Object.keys(this.formPesquisa).forEach((chave) => {
-        if (this.formPesquisa[chave] == "") delete this.formPesquisa[chave];
-      });
-      const queryParams = new URLSearchParams(this.formPesquisa).toString();
-      const url = `http://localhost:3000/contratos?${this.parametroDeRelacionamento}&${queryParams}`;
-      this.getDadosApi(url);
+      const url = `http://localhost:3000/contratos?${this.parametroDeRelacionamento}`;
+      this.getDadosApi(url, this.formPesquisa);
     },
   },
   created() {
-    const queryParams = new URLSearchParams(this.$route.query).toString();
-    this.getDadosApi(
-      `http://localhost:3000/contratos?${this.parametroDeRelacionamento}&${queryParams}`
-    );
+    const url = `http://localhost:3000/contratos?${this.parametroDeRelacionamento}`;
+    this.getDadosApi(url, this.$route.query);
   },
   beforeRouteUpdate(to, from, next) {
-    const queryParams = new URLSearchParams(to.query).toString();
-    const url = `http://localhost:3000/contratos?${this.parametroDeRelacionamento}&${queryParams}`;
-    this.getDadosApi(url);
+    const url = `http://localhost:3000/contratos?${this.parametroDeRelacionamento}`;
+    this.getDadosApi(url, to.query);
     next();
   },
 };
