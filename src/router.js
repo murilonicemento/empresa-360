@@ -32,7 +32,14 @@ const routes = [
         component: VendasComponent,
         children: [
           {
-            path: "leads", component: LeadsComponent, name: "leads"
+            path: "leads",
+            component: LeadsComponent,
+            name: "leads",
+            beforeEnter(to, from, next) {
+              // Executa antes da navegação
+              console.log(to, from);
+              next();
+            }
           },
           {
             path: "leads/:id", /*props: { id: 2 }, props: () => ({ id: 3 }),*/ props: true, alias: ["/l/:id", "pessoa/:id", "/:id"], component: LeadComponent, name: "lead"
