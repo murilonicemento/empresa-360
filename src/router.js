@@ -18,12 +18,14 @@ import PaginaNaoEncontrada from './views/PaginaNaoEncontrada.vue';
 const routes = [
   {
     path: "/",
-    component: SiteView
+    component: SiteView,
+    meta: { requerAutorizacao: false }
   },
   {
     path: "/home",
     alias: "/app",
     component: HomeView,
+    meta: { requerAutorizacao: true },
     children: [
       {
         path: "vendas",
@@ -92,8 +94,15 @@ const router = createRouter({
   routes
 });
 
-router.beforeEach((to, from) => {
+router.beforeEach((to) => {
   // Executado antes do acesso a rota destino
+  if (to.meta.requerAutorizacao) {
+    console.log("validar acesso");
+  }
+});
+
+router.afterEach((to, from) => {
+  // Executado depois do acesso a rota destino
   console.log("Origem: ", from);
   console.log("Destino: ", to);
 });
