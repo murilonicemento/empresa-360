@@ -38,5 +38,10 @@ export default {
   created() {
     this.getDadosApi("http://localhost:3000/leads");
   },
+  beforeRouteEnter(to, from, next) {
+    console.log(to, from);
+    console.log("BeforeRouteEnter");
+    next();
+  },
 };
 </script>
